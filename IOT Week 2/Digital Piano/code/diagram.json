@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "author": "ChatGPT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzz",
+      "top": -150,
+      "left": 330,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 280,
+      "left": -40,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 280,
+      "left": 80,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 280,
+      "left": 200,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": 280,
+      "left": 320,
+      "attrs": { "color": "yellow" }
+    }
+  ],
+  "connections": [
+    ["buzz:1","uno:8","green",["v-20","h-70"]],
+    ["buzz:2","uno:GND.1","black",["v-20","h-280"]],
+
+    ["btn1:1.r","uno:2","green",["v-40","h-120","v-180"]],
+    ["btn1:2.r","uno:GND.1","black",["h150","v-80"]],
+
+    ["btn2:1.r","uno:3","green",["v-30","h-40","v-170"]],
+    ["btn2:2.r","uno:GND.1","black",["v-70"]],
+
+    ["btn3:1.r","uno:4","green",["v-30","h40","v-170"]],
+    ["btn3:2.r","uno:GND.1","black",["h-60","v-70"]],
+
+    ["btn4:1.r","uno:5","green",["v-40","h100","v-180"]],
+    ["btn4:2.r","uno:GND.1","black",["h-180","v-70"]]
+  ]
+}
