@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "author": "Arpit",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "red",
+      "top": -60,
+      "left": 290,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "green",
+      "top": 40,
+      "left": 290,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -60,
+      "left": 210,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 40,
+      "left": 210,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "coin",
+      "top": 270,
+      "left": -30,
+      "attrs": {
+        "color": "yellow"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "buy",
+      "top": 270,
+      "left": 110,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "reset",
+      "top": 270,
+      "left": 250,
+      "attrs": {
+        "color": "red"
+      }
+    }
+  ],
+  "connections": [
+    ["uno:8","r1:1","green",["h40"]],
+    ["r1:2","red:A","green",["h30"]],
+    ["red:C","uno:GND.1","black",["v100","h-250"]],
+
+    ["uno:9","r2:1","green",["h40"]],
+    ["r2:2","green:A","green",["h30"]],
+    ["green:C","uno:GND.1","black",["v60","h-250"]],
+
+    ["coin:1.r","uno:2","green",["v-30"]],
+    ["coin:2.r","uno:GND.1","black",["h150"]],
+
+    ["buy:1.r","uno:3","green",["v-30"]],
+    ["buy:2.r","uno:GND.1","black",["h20"]],
+
+    ["reset:1.r","uno:4","green",["v-30"]],
+    ["reset:2.r","uno:GND.1","black",["h-100"]]
+  ]
+}
